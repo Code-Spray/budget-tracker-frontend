@@ -1,0 +1,64 @@
+:root {
+    /* الخلفية والعناصر الأساسية */
+    --bg-main: #ffffff;
+    --bg-card: #f9fafb;
+    --border-color: #d1d5db;
+
+    /* النصوص والخطوط */
+    --text-main: #111827;
+    --text-muted: #6b7280;
+
+    /* اللون الأساسي (Accent Color) */
+    --accent-blue: #2563eb;
+    --accent-blue-hover: #1d4ed8;
+    --accent-blue-light: #eff6ff;
+
+    /* ألوان إضافية للحالات (اختيارية للمدخلات والمصروفات) */
+    --success-green: #10b981;
+    --danger-red: #ef4444;
+}
+
+header {
+    background-color: var(--bg-main);
+    border-bottom: 2px solid var(--border-color);
+    border-top: 2px solid var(--border-color);
+}
+
+.table-conainer {
+    height: 300px;
+}
+
+.transaction p {
+    margin: 0;
+}
+
+.income {
+    background-color: rgba(40, 219, 40, 0.7);
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+.outcome {
+    background-color: rgba(219, 67, 40, 0.7);
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+.final-colomn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.final-colomn .tools img {
+    box-sizing: border-box;
+}
+
+.final-colomn .tools img:hover {
+    background-color: hsl(210, 4%, 11%, 0.4);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+table input{
+    width: 100%;
+}

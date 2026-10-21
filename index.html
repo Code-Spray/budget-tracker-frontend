@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="d-flex justify-content-between align-items-center">
+            <h2 class="ml-3">Tracher</h2>
+            <div class="buttons mr-3">
+                <a href="./log-in.html"><button class="btn btn-primary log-in">Log In</button></a>
+                <a href="./sign-up.html"><button class="btn btn-primary sign-up">Sign Up</button></a>
+                <button class="btn btn-primary log-out">Log Out</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row align-items-center">
+
+            <div class="col-12 col-md-4 mb-3">
+
+                <h2>Add Transaction</h2>
+
+                <form class="adding-form">
+                    
+                    <label for="amount">Amount:</label>
+                    <input name="amount" type="number" placeholder="Amount" id="amount">
+                    <hr>
+                    <p class="m-0">Type:</p>
+
+                    <label for="income">Income</label>
+                    <input name="transaction_type" value="income" type="radio" id="income">
+                    <label for="outcome">Outcome</label>
+                    <input name="transaction_type" value="outcome" type="radio" id="outcome">
+
+                    <hr>
+                    <label for="source">Source:</label>
+                    <input name="source" type="text" placeholder="Source" id="source">
+                    <hr>
+                    
+                    <label for="transaction_date">date:</label>
+                    <input name="transaction_date" type="date" placeholder="Date" id="transaction_date">
+                    <hr>
+
+                    <button class="btn btn-primary d-block m-auto " type="submit">ADD</button>
+                </form>
+
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div class="table-conainer table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">type</th>
+                                <th scope="col">amount</th>
+                                <th scope="col">source</th>
+                                <th scope="col">date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="transactions">
+                            <!-- <tr class="transaction">
+                                <th class="transaction-id" scope="row">900</th>
+                                <td class="transaction-type">income</td>
+                                <td class="amount">000</td>
+                                <td class="source">اي زفت</td>
+                                <td class="final-colomn transaction-date">
+                                    transaction_date
+                                    <div class="tools">
+                                        <img class="edit" src="images/pen.svg" alt="pen">
+                                        <img class="delete" src="images/trash.svg" alt="trash">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="transaction">
+                                <th class="transaction-id" scope="row"></th>
+                                <td class="transaction-type">
+                                    <select name="transaction_type" id="transaction_type">
+                                        <option value="income">Income</option>
+                                        <option value="outcome">Outcome</option>
+                                    </select>
+                                </td>
+                                <td class="amount">
+                                    <input type="number" name="amount" id="amount">
+                                </td>
+                                <td class="source">
+                                    <input type="text" name="source">
+                                </td>
+                                <td class="final-colomn transaction-date">
+                                    <input type="date" name="transaction_date">
+                                    <div class="tools">
+                                        <button class="enter">Enter</button>
+                                        <button class="cancle">Cancele</button>
+                                    </div>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
