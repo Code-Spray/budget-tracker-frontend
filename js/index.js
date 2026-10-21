@@ -4,7 +4,7 @@ async function checkToken() {
     const saved = localStorage.getItem("token")
     if (!saved) return false
     try {
-        const res = await fetch("http://localhost:3100/all-transactions", {
+        const res = await fetch(`${basePath}/all-transactions`, {
             method: "get",
             headers: { "Authorization": `Bearer ${saved}` }
         })
@@ -36,7 +36,7 @@ function logOut(btn) {
 
 async function getTransactions() {
     try {
-        const res = await fetch("http://localhost:3100/all-transactions", {
+        const res = await fetch(`${basePath}/all-transactions`, {
             method: "get",
             headers: { "Authorization": `Bearer ${token}` }
         })
@@ -50,7 +50,7 @@ async function getTransactions() {
 
 async function editTransaction(transactionOb) {
     transactionOb = JSON.stringify(transactionOb)
-    const res = await fetch("http://localhost:3100/edit-transaction", {
+    const res = await fetch(`${basePath}/edit-transaction`, {
         method: "put",
         headers: {
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ async function editTransaction(transactionOb) {
 
 async function deleteTransaction(id) {
     try {
-        const res = await fetch(`http://localhost:3100/delete-transaction?id=${id}`, {
+        const res = await fetch(`${basePath}/delete-transaction?id=${id}`, {
             method: "delete",
             headers: { "Authorization": `Bearer ${token}` }
         })
@@ -121,7 +121,7 @@ async function sendFormData(form) {
     })
     console.log("body = ", reqbody)
     try {
-        const res = await fetch("http://localhost:3100/create-transaction", {
+        const res = await fetch(`${basePath}/create-transaction`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
