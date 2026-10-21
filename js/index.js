@@ -6,7 +6,10 @@ async function checkToken() {
     try {
         const res = await fetch(`${basePath}/all-transactions`, {
             method: "get",
-            headers: { "Authorization": `Bearer ${saved}` }
+            headers: {
+                "Authorization": `Bearer ${saved}`,
+                "ngrok-skip-browser-warning": "true"
+            }
         })
         if (!res.ok) {
             localStorage.removeItem("token")   // توكن باظ أو انتهى
@@ -38,7 +41,10 @@ async function getTransactions() {
     try {
         const res = await fetch(`${basePath}/all-transactions`, {
             method: "get",
-            headers: { "Authorization": `Bearer ${token}` }
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
+            }
         })
         const transactionsJson = await res.json()
         console.log("transactionsJson = ", transactionsJson)
@@ -54,7 +60,8 @@ async function editTransaction(transactionOb) {
         method: "put",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${token}`,
+            "ngrok-skip-browser-warning": "true"
         },
         body: transactionOb
     })
@@ -67,7 +74,10 @@ async function deleteTransaction(id) {
     try {
         const res = await fetch(`${basePath}/delete-transaction?id=${id}`, {
             method: "delete",
-            headers: { "Authorization": `Bearer ${token}` }
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
+            }
         })
         const resjson = res.json()
         console.log(resjson)
@@ -125,7 +135,8 @@ async function sendFormData(form) {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${token}`,
+                "ngrok-skip-browser-warning": "true"
             },
             body: reqbody
         })
@@ -222,12 +233,12 @@ async function init() {
     updateAuthUI(isLoggedIn)
     logOut(document.querySelector(".log-out"))
 
-    if (!isLoggedIn){
+    if (!isLoggedIn) {
         document.querySelector(".welcome").style.display = "block"
         document.querySelector(".main-content").style.display = "none"
         return
-    } 
-    
+    }
+
     document.querySelector(".welcome").style.display = "none"
     document.querySelector(".main-content").style.display = "block"
 
