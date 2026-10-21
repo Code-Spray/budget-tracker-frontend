@@ -222,7 +222,14 @@ async function init() {
     updateAuthUI(isLoggedIn)
     logOut(document.querySelector(".log-out"))
 
-    if (!isLoggedIn) return   // مفيش داعي نحمّل بيانات أو نربط الفورم
+    if (!isLoggedIn){
+        document.querySelector(".welcome").style.display = "block"
+        document.querySelector(".main-content").style.display = "none"
+        return
+    } 
+    
+    document.querySelector(".welcome").style.display = "none"
+    document.querySelector(".main-content").style.display = "block"
 
     renderAllTransactions()
     const form = document.querySelector(".adding-form")
