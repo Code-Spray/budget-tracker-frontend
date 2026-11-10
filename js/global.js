@@ -1,1 +1,0 @@
-const basePath = "https://expire-arrival-deprecate.ngrok-free.dev"

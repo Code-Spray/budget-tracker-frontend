@@ -1,0 +1,52 @@
+/* ===== تنسيقات مشتركة ===== */
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* صفحات الدخول وإنشاء الحساب: الكارت في نص الشاشة */
+body.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.auth-page main {
+  width: 100%;
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+  border: 0;
+}
+
+/* كروت الملخص */
+.summary-card {
+  border: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  border-radius: 12px;
+}
+
+/* الأرقام تفضل مترتبة صح جوه صفحة RTL */
+.num {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+/* الجدول */
+.table td,
+.table th {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table td.source-cell {
+  white-space: normal;
+  word-break: break-word;
+  min-width: 140px;
+}
