@@ -40,12 +40,15 @@ const deleteModal = new bootstrap.Modal(byId("delete-modal"));
 // =====================================================
 function formatMoney(value) {
     const number = Number(value);
-    if (!Number.isFinite(number)) return "0.00";
+    if (!Number.isFinite(number) || number > 1e15) return "unexpected format";
 
-    return number.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    });
+    const formater = new Intl.NumberFormat("en-US", {
+        notation: 'compact',
+        compactDisplay: 'short',
+        maximumFractionDigits: 2
+    })
+    console.log(formater.format(number))
+    return formater.format(number)
 }
 
 function parseDate(value) {
@@ -252,6 +255,9 @@ function validateTransaction(values) {
         errors.amount = "المبلغ مطلوب";
     } else if (!Number.isFinite(amount) || amount <= 0) {
         errors.amount = "المبلغ لازم يكون رقم أكبر من صفر";
+    }
+    else if (amount >= 1e15) {
+        errors.amount = "المبلغ لازم يكون اقل من 1e15 ";
     }
 
     if (!values.source) {
